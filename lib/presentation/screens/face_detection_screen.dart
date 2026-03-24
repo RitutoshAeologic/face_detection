@@ -99,7 +99,7 @@ class _CameraView extends StatelessWidget {
           size: size,
           painter: FaceOverlayPainter(
             faces: controller.faces.toList(),
-            imageSize: controller.imageSize ?? Size(size.width, size.height),
+            imageSize: controller.imageSize ?? Size(640, 480),
             screenSize: size,
             isFrontCamera: controller.isFrontCamera,
           ),
@@ -333,6 +333,10 @@ class FaceOverlayPainter extends CustomPainter {
           old.isFrontCamera != isFrontCamera;
 }
 
+// ─────────────────────────────────────────────
+// UI WIDGETS
+// ─────────────────────────────────────────────
+
 class _FaceCountBadge extends StatelessWidget {
   final int count;
   const _FaceCountBadge({required this.count});
@@ -409,4 +413,8 @@ class _SwitchCameraButton extends StatelessWidget {
     );
   }
 }
+
+// ─────────────────────────────────────────────
+// DI + MAIN
+// ─────────────────────────────────────────────
 
