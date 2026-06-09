@@ -80,6 +80,7 @@ class FaceDetectionController extends GetxController {
     } catch (_) {}
     await cameraController?.dispose();
     cameraController = null;
+    update();
 
     currentCameraIndex = (currentCameraIndex + 1) % cameras.length;
     await _startCamera(cameras[currentCameraIndex]);
